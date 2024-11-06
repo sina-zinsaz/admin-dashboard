@@ -1,24 +1,30 @@
-import { Box } from "@mui/material";
-import "./style.css";
-import { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { Box, CircularProgress, Typography } from "@mui/material";
 
 export default function Loading() {
-  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.body.style.background = "#0B1437"; // Dark mode background
-    } else {
-      document.body.style.background = "#F4F7FE"; // Light mode background
-    }
-  }, [isDarkMode]);
-
   return (
-    <Box className="spinner">
-      <Box className="loading"></Box>
-      <Box className="loading-text">Loading...</Box>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="80vh"
+    >
+      <Box position="relative" display="inline-flex">
+        <CircularProgress
+          sx={{ color: "#3498db" }}
+          size={150}
+          thickness={0.5}
+        />
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          sx={{ transform: "translate(-50%, -50%)" }}
+        >
+          <Typography variant="body2" component="div" color="text.secondary">
+            Loading...
+          </Typography>
+        </Box>
+      </Box>
     </Box>
   );
 }
