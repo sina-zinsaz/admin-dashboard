@@ -3,10 +3,10 @@
   href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.5/src/app/ci.min.css"
 />
 
-# Admin Dash
+# Zinsaz Dashboard
 
 <b>
-    React + Vite + Ts + Mui 
+    React + Ts + Mui 
 </b>
 
 <h2> Created by </h2>
@@ -39,8 +39,3 @@
 <a href='https://www.figma.com/file/gs7MYXAQcNAfYW7xyoXcIV/Coffee-Shop-Mobile-App-Design-(Community)?type=design&mode=design&t=KeEgZ9O92Scycw0k-0'>
     <img src='https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white' />
 </a>
-
-
-<h3> run project </h3>
-
-npm run dev
