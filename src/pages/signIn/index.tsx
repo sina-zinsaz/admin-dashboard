@@ -3,7 +3,8 @@ import { Box, TextField, Button, Typography, Grid } from "@mui/material";
 import { showNotification } from "../../lib/notification";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import { useNavigate } from "react-router-dom";
-
+import Background from "../../assets/img/Background 5.4.jpg";
+import Profile from "../../assets/img/profile.jpg";
 export default function SignIn() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [emailError, setEmailError] = useState("");
@@ -90,13 +91,28 @@ export default function SignIn() {
           xs={12}
           md={6}
           sx={{
+            position: "relative",
+            backgroundImage: `url(${Background})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             display: "flex",
+            flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#f5f5f5",
+            borderRadius: "5rem 0px 0px 5rem",
           }}
         >
-          <Typography variant="h3">LOGO</Typography>
+          <Box
+            component="img"
+            src={Profile}
+            sx={{
+              borderRadius: "50%",
+              width: "10rem",
+              height: "10rem",
+              cursor: "pointer",
+            }}
+          />
+          <Typography variant="h3">Sina Zinsaz</Typography>
         </Grid>
       </Grid>
       <Box sx={{ position: "absolute", top: 16, left: 16 }}>
