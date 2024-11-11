@@ -24,18 +24,7 @@ export default function ListSidebar() {
   });
 
   useEffect(() => {
-    dispatch(
-      setPageTitle(
-        [
-          "Dashboard",
-          "NFT Marketplace",
-          "Tables",
-          "Kanban",
-          "Profile",
-          "Sign In",
-        ][active]
-      )
-    );
+    dispatch(setPageTitle(["Dashboard", "Profile", "Sign In"][active]));
   }, [active, dispatch]);
 
   const handleListItemClick = (index: number, text: string) => {
@@ -47,14 +36,7 @@ export default function ListSidebar() {
 
   return (
     <List>
-      {[
-        "Dashboard",
-        "NFT Marketplace",
-        "Tables",
-        "Kanban",
-        "Profile",
-        "Sign In",
-      ].map((text, index) => (
+      {["Dashboard", "Profile", "Sign In"].map((text, index) => (
         <ListItem key={text} disablePadding>
           <ListItemButton
             component={RouterLink}

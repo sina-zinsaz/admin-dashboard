@@ -1,10 +1,14 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Box, TextField, Button, Typography, Grid } from "@mui/material";
 import { showNotification } from "../../lib/notification";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [emailError, setEmailError] = useState("");
+
+  const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,59 +31,82 @@ export default function SignIn() {
   };
 
   return (
-    <Grid container sx={{ height: "100vh", width: "100%" }}>
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-      >
-        <Box sx={{ width: "100%", maxWidth: 400 }}>
-          <Typography variant="h5" component="h1" textAlign="center" mb={2}>
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit}>
-            <TextField
-              label="Email Address"
-              fullWidth
-              margin="normal"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              error={Boolean(emailError)}
-              helperText={emailError}
-              autoFocus
-              required
-            />
-            <TextField
-              label="Password"
-              fullWidth
-              margin="normal"
-              name="password"
-              type="password"
-              value={form.password}
-              onChange={handleChange}
-              required
-            />
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3 }}>
-              Sign In
-            </Button>
+    <>
+      <Grid container sx={{ height: "100vh", width: "100%" }}>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Box sx={{ width: "100%", maxWidth: 400 }}>
+            <Typography variant="h5" component="h1" textAlign="center" mb={2}>
+              Sign in
+            </Typography>
+            <Box component="form" onSubmit={handleSubmit}>
+              <TextField
+                label="Email Address"
+                fullWidth
+                margin="normal"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                error={Boolean(emailError)}
+                helperText={emailError}
+                autoFocus
+                required
+              />
+              <TextField
+                label="Password"
+                fullWidth
+                margin="normal"
+                name="password"
+                type="password"
+                value={form.password}
+                onChange={handleChange}
+                required
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3 }}
+              >
+                Sign In
+              </Button>
+            </Box>
           </Box>
-        </Box>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#f5f5f5",
+          }}
+        >
+          <Typography variant="h3">LOGO</Typography>
+        </Grid>
       </Grid>
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: "#f5f5f5",
-        }}
-      >
-        <Typography variant="h3">LOGO</Typography>
-      </Grid>
-    </Grid>
+      <Box sx={{ position: "absolute", top: 16, left: 16 }}>
+        <Typography
+          variant="body2"
+          display="flex"
+          alignItems="center"
+          sx={{ cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        >
+          <ArrowBackIosNewRoundedIcon sx={{ mr: 1, fontSize: "1rem" }} /> Back
+          to Dashboard
+        </Typography>
+      </Box>
+    </>
   );
 }
