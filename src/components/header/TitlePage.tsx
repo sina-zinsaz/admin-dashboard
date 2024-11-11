@@ -4,6 +4,7 @@ import { RootState } from "../../store";
 
 export default function TitlePage() {
   const pageTitle = useSelector((state: RootState) => state.page.pageTitle);
+  console.log("pageTitle", pageTitle);
 
   return (
     <Box display="flex" flexDirection="column">

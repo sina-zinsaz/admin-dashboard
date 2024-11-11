@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 export default function SignIn() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [emailError, setEmailError] = useState("");
-
   const navigate = useNavigate();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -28,6 +27,11 @@ export default function SignIn() {
     }
     showNotification("Successfully signed in!", "success");
     setForm({ email: "", password: "" });
+  };
+
+  const handleBackToDashboard = () => {
+    navigate("/");
+    localStorage.setItem("activeIndex", "0");
   };
 
   return (
@@ -101,7 +105,7 @@ export default function SignIn() {
           display="flex"
           alignItems="center"
           sx={{ cursor: "pointer" }}
-          onClick={() => navigate("/")}
+          onClick={handleBackToDashboard}
         >
           <ArrowBackIosNewRoundedIcon sx={{ mr: 1, fontSize: "1rem" }} /> Back
           to Dashboard

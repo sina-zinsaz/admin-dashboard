@@ -8,7 +8,6 @@ import { AppDispatch, RootState } from "../../../../store";
 import { useDispatch, useSelector } from "react-redux";
 import Profile from "../../../../assets/img/profile.jpg";
 import { useNavigate } from "react-router-dom";
-import { setPageTitle } from "../../../../store/pageSlice";
 
 export default function ButtonHead() {
   const dispatch = useDispatch<AppDispatch>();
@@ -17,10 +16,7 @@ export default function ButtonHead() {
   const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
 
   const handleProfileClick = () => {
-    const title = "Sign In";
-    dispatch(setPageTitle(title));
-    localStorage.setItem("pageTitle", title);
-    localStorage.setItem("activeIndex", "5");
+    localStorage.setItem("activeIndex", "2");
     navigate("sign-in");
   };
 
