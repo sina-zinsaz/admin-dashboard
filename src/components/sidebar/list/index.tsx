@@ -28,10 +28,12 @@ export default function ListSidebar() {
   }, [active, dispatch]);
 
   const handleListItemClick = (index: number, text: string) => {
+    const newIndex = text === "Sign In" ? 0 : index;
+
     setActive(index);
-    dispatch(setActiveIndex(index));
+    dispatch(setActiveIndex(newIndex));
     dispatch(setPageTitle(text));
-    localStorage.setItem("activeIndex", index.toString());
+    localStorage.setItem("activeIndex", newIndex.toString());
   };
 
   return (
