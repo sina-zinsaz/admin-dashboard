@@ -5,7 +5,7 @@ interface LoginState {
 }
 
 const initialState: LoginState = {
-  login: false,
+  login: JSON.parse(localStorage.getItem("login") || "false"),
 };
 
 const loginSlice = createSlice({
@@ -14,9 +14,11 @@ const loginSlice = createSlice({
   reducers: {
     setLogin(state, action) {
       state.login = action.payload;
+      localStorage.setItem("login", JSON.stringify(action.payload));
     },
     logout(state) {
       state.login = false;
+      localStorage.removeItem("login");
     },
   },
 });

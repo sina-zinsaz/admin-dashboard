@@ -5,10 +5,13 @@ import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRound
 import { useNavigate } from "react-router-dom";
 import Background from "../../assets/img/Background 5.4.jpg";
 import Profile from "../../assets/img/profile.jpg";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../store/loginSlice";
 export default function SignIn() {
-  const [form, setForm] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [emailError, setEmailError] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,7 +30,9 @@ export default function SignIn() {
       return;
     }
     showNotification("Successfully signed in!", "success");
-    setForm({ email: "", password: "" });
+    dispatch(setLogin(true));
+    setForm({ username: "", email: "", password: "" });
+    navigate("/");
   };
 
   const handleBackToDashboard = () => {
@@ -49,10 +54,19 @@ export default function SignIn() {
           }}
         >
           <Box sx={{ width: "100%", maxWidth: 400 }}>
-            <Typography variant="h5" component="h1" textAlign="center" mb={2}>
-              Sign in
-            </Typography>
             <Box component="form" onSubmit={handleSubmit}>
+              <TextField
+                label="User Name"
+                fullWidth
+                margin="normal"
+                name="username"
+                value={form.username}
+                onChange={handleChange}
+                error={Boolean(emailError)}
+                helperText={emailError}
+                autoFocus
+                required
+              />
               <TextField
                 label="Email Address"
                 fullWidth
@@ -79,9 +93,15 @@ export default function SignIn() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3 }}
+                sx={{ mt: 2 }}
               >
                 Sign In
+              </Button>
+              <Typography variant="body1" textAlign="center" mt={2}>
+                or
+              </Typography>
+              <Button type="submit" fullWidth variant="outlined" sx={{ mt: 2 }}>
+                Login
               </Button>
             </Box>
           </Box>
