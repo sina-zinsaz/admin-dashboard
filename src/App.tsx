@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider, useSelector } from "react-redux";
-import store, { RootState } from "./store";
+import store, { RootState } from "./redux/slices";
 import { ThemeProvider } from "@mui/material/styles";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";

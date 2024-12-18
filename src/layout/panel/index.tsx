@@ -1,7 +1,7 @@
 import { Box, Toolbar } from "@mui/material";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import { drawerWidth } from "../../constants/layout";
+import { drawerWidth } from "@/constants/layout";
 import { Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 

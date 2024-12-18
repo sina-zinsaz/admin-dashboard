@@ -9,11 +9,11 @@ import {
 } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { links } from "../../../constants/links";
-import { icons } from "../../../constants/icons";
-import useAppBarStyles from "../../../constants/styles";
-import { setActiveIndex, setPageTitle } from "../../../store/pageSlice";
-import { selectIsLoggedIn } from "../../../store/loginSlice";
+import { links } from "@/constants/links";
+import { icons } from "@/constants/icons";
+import useAppBarStyles from "@/constants/styles";
+import { setActiveIndex, setPageTitle } from "@/redux/slices/pageSlice";
+import { selectIsLoggedIn } from "@/redux/slices/loginSlice";
 
 export default function ListSidebar() {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "@/redux/slices";
 
 export default function TitlePage() {
   const pageTitle = useSelector((state: RootState) => state.page.pageTitle);

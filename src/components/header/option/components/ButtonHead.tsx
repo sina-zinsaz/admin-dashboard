@@ -3,10 +3,10 @@ import ErrorOutlineRoundedIcon from "@mui/icons-material/ErrorOutlineRounded";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
-import { toggleTheme } from "../../../../store/themeSlice";
-import { AppDispatch, RootState } from "../../../../store";
+import { toggleTheme } from "@/redux/slices/themeSlice";
+import { AppDispatch, RootState } from "@/redux/slices";
 import { useDispatch, useSelector } from "react-redux";
-import Profile from "../../../../assets/img/profile.jpg";
+import Profile from "@/assets/img/profile.jpg";
 import { useNavigate } from "react-router-dom";
 
 export default function ButtonHead() {

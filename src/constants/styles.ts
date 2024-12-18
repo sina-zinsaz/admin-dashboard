@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import { drawerWidth } from "./layout";
 import { useSelector } from "react-redux";
-import { RootState } from "../store";
+import { RootState } from "@/redux/slices";
 
 const useAppBarStyles = () => {
   const theme = useTheme();

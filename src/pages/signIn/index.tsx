@@ -1,12 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Box, TextField, Button, Typography, Grid } from "@mui/material";
-import { showNotification } from "../../lib/notification";
+import { showNotification } from "@/lib/notification";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import { useNavigate } from "react-router-dom";
-import Background from "../../assets/img/Background 5.4.jpg";
-import Profile from "../../assets/img/profile.jpg";
+import Background from "@/assets/img/Background 5.4.jpg";
+import Profile from "@/assets/img/profile.jpg";
 import { useDispatch } from "react-redux";
-import { setLogin } from "../../store/loginSlice";
+import { setLogin } from "@/redux/slices/loginSlice";
 export default function SignIn() {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
   const [emailError, setEmailError] = useState("");

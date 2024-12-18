@@ -1,6 +1,6 @@
-import { drawerWidth } from "../../constants/layout";
+import { drawerWidth } from "@/constants/layout";
 import { Box, Drawer } from "@mui/material";
-import DrawerSidebar from "../../components/DrawerSidebar";
+import DrawerSidebar from "@/components/DrawerSidebar";
 
 const Sidebar = () => {
   return (

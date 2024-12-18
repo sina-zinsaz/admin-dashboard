@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../../store/loginSlice";
-import Loading from "../../components/loading";
+import { selectIsLoggedIn } from "@/redux/slices/loginSlice";
+import Loading from "@/components/loading";
 
 export default function Dashboard() {
   const isLoggedIn = useSelector(selectIsLoggedIn);
