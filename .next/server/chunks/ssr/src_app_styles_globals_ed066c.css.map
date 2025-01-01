@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file://F%3A/admin-dashboard/src/app/styles/globals.css"],"sourcesContent":["*{\r\n    padding: 0;\r\n    margin: 0;\r\n    box-shadow: none;\r\n}"],"names":[],"mappings":"AAAA"}},
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
