@@ -1,12 +1,9 @@
 import { useMemo } from "react";
 import { useTheme } from "@mui/material/styles";
 import { drawerWidth } from "./layout";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/slices";
 
-const useAppBarStyles = () => {
+export const useAppBarStyles = () => {
   const theme = useTheme();
-  const isDarkMode = useSelector((state: RootState) => state.theme.darkMode);
 
   const appBarStyle = useMemo(
     () => ({
@@ -30,7 +27,5 @@ const useAppBarStyles = () => {
     []
   );
 
-  return { appBarStyle, appBarSx , isDarkMode };
+  return { appBarStyle, appBarSx };
 };
-
-export default useAppBarStyles;
