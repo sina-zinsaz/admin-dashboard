@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Header from "./layout/panel/Header";
+import PanelLayout from "./layout/panel";
 
 export const metadata = {
   title: "My Blog",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Home() {
   return (
     <Box>
-      <Header />
+      <PanelLayout />
     </Box>
   );
 }

@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://F%3A/admin-dashboard/src/app/page.tsx"],"sourcesContent":["import { Box } from \"@mui/material\";\r\nimport Header from \"./layout/panel/Header\";\r\nimport PanelLayout from \"./layout/panel\";\r\nimport { BrowserRouter } from \"react-router-dom\";\r\n\r\nexport const metadata = {\r\n  title: \"My Blog\",\r\n  description: \"create by Sina Zinsaz\",\r\n};\r\n\r\nexport default function Home() {\r\n  return (\r\n    <Box>\r\n      <BrowserRouter>\r\n        {/* <PanelLayout /> */}\r\n      </BrowserRouter>\r\n    </Box>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AAAA;AAGA;;;;AAEO,MAAM,WAAW;IACtB,OAAO;IACP,aAAa;AACf;AAEe,SAAS;IACtB,qBACE,8OAAC,mLAAA,CAAA,MAAG;kBACF,cAAA,8OAAC,uKAAA,CAAA,gBAAa;;;;;;;;;;AAKpB"}},
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 47, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
